@@ -19,22 +19,25 @@
   <div class="container-flex">
     <div class="card">
       <div class="date-container">
-      <div class="date-input">
+      <div class="date-input" >
         <p>DAY</p>
-        <input type="text" placeholder="DD">
+        <input id="day" type="text" placeholder="DD" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="2">
+        <p class="error" id="day-error">Must be a valid day</p>
       </div>
       <div class="date-input">
         <p>MONTH</p>
-        <input type="text" placeholder="MM">
+        <input id="month" type="text" placeholder="MM" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="2">
+        <p class="error">Must be a valid month</p>
       </div>
       <div class="date-input">
         <p>YEAR</p>
-        <input type="text" placeholder="YYYY">
+        <input id="year" type="text" placeholder="YYYY" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4">
+        <p class="error">Must be in the past</p>
       </div>
     </div>
     <div class="separator">
     <div class="line"></div>
-    <div class="circle"> <img src="assets/images/icon-arrow.svg" alt=""></div>
+    <div onclick="handleClick()" class="circle"> <img src="assets/images/icon-arrow.svg" alt=""></div>
   </div>
   <div class="calculator">
     <div class="date-calculator">
