@@ -1,1 +1,1 @@
-logica completa, solo falta agregarle los eventos de javascript
+falta animacion

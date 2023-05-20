@@ -1,17 +1,62 @@
 const day= document.getElementById("day");
-const month= document.getElementById("month");
-const year= document.getElementById("year");
-let dayBoolean=false;
+const dateInputDay= document.getElementById("dayP");
+let dayBooleanError=false;
 const dayError=document.getElementById("day-error");
+
+
+const month= document.getElementById("month");
+let monthBooleanError=false;
+const dateInputMonth=document.getElementById("monthP");
+const monthError=document.getElementById("month-error");
+
+
+const year= document.getElementById("year");
+let yearBooleanError=false;
+const dateInputYear=document.getElementById("yearP");
+const yearError=document.getElementById("year-error");
+
 const handleDayError=() => {
-    if(dayBoolean){
+    if(dayBooleanError){
         dayError.style.display="block";
+        dateInputDay.style.color = "hsl(0, 100%, 67%)";
+        day.style.borderColor="hsl(0, 100%, 67%)"
+    }else{
+        dayError.style.display="none";
+        dateInputDay.style.color = "hsl(0, 1%, 44%)";
+        day.style.borderColor="hsl(0, 0%, 86%)"
+    }
+}
+const handleMonthError=() => {
+    if(monthBooleanError){
+        monthError.style.display="block";
+        dateInputMonth.style.color = "hsl(0, 100%, 67%)";
+        month.style.borderColor="hsl(0, 100%, 67%)"
+    }else{
+        monthError.style.display="none";
+        dateInputMonth.style.color = "hsl(0, 1%, 44%)";
+        month.style.borderColor="hsl(0, 0%, 86%)"
+    }
+}
+const handleYearError=() => {
+    if(yearBooleanError){
+        yearError.style.display="block";
+        dateInputYear.style.color = "hsl(0, 100%, 67%)";
+        year.style.borderColor="hsl(0, 100%, 67%)"
+    }else{
+        yearError.style.display="none";
+        dateInputYear.style.color = "hsl(0, 1%, 44%)";
+        year.style.borderColor="hsl(0, 0%, 86%)"
     }
 }
 const fechaActual=new Date;
 let dayNow=fechaActual.getDate();
 let monthNow=fechaActual.getMonth()+1;
 let yearNow=fechaActual.getFullYear();
+
+const dayParam= document.getElementById("days-param");
+const monthParam= document.getElementById("months-param");
+const yearParam= document.getElementById("years-param");
+
 
 function validateDate(day,month){
     if((month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12) && day<=31 && day>0){
@@ -45,31 +90,59 @@ function ageCalculator(yearVal,monthVal){
     }
     return (yearNow-yearVal)
 }
-
+const handleChange=(dayResult,monthResult,yearResult) => {
+    dayParam.innerText=dayResult;
+    monthParam.innerText=monthResult;
+    yearParam.innerText=yearResult;
+    dayParam.style.letterSpacing="1px"
+    monthParam.style.letterSpacing="1px"
+    yearParam.style.letterSpacing="1px"
+}
 
 function handleClick(){
     let dayValue=Math.floor(day.value);
     let monthValue=Math.floor(month.value);
     let yearValue=Math.floor(year.value);
     if(dayValue==""){
-        console.log("invalid")
-        dayBoolean=true;
+        dayBooleanError=true;
         handleDayError();
     }else{
         if(monthValue==""){
-            console.log("invalid")
+            dayBooleanError=false;
+            handleDayError();
+            monthBooleanError=true;
+            handleMonthError();
         }else{
             if (monthValue>12){
-                console.log("display block para el segundo elemento")
+                monthBooleanError=true;
+                handleMonthError();
             }else{
                 if (!validateDate(dayValue,monthValue)){
-                    console.log("display block para el primer elemento")
+                    dayBooleanError=true;
+                    handleDayError();
                 }
                 else{
                     if(yearValue>yearNow){
-                        console.log("display block para el tercer elemento");
+                        dayBooleanError=false;
+                        handleDayError();
+                        monthBooleanError=false;
+                        handleMonthError();
+                        yearBooleanError=true;
+                        handleYearError();
                     }else{
-                        console.log("validate")
+                        dayBooleanError=false;
+                        handleDayError();
+                        monthBooleanError=false;
+                        handleMonthError();
+                        yearBooleanError=false;
+                        handleYearError();
+                        let dayResult=daysCalculator(dayValue);
+                        let monthResult=monthsCalculator(monthValue);
+                        let yearResult=ageCalculator(yearValue,monthValue);
+                        handleChange(dayResult,monthResult,yearResult);
+                        day.value="";
+                        month.value="";
+                        year.value="";
                     }
                 }
             }

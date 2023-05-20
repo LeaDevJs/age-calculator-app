@@ -134,6 +134,7 @@ body {
     margin-right: 10px;
     color: hsl(259, 100%, 65%) ;
     letter-spacing: 10px;
+    transition: 1s;
 }
 
 @media (max-width: 768px) {
@@ -147,8 +148,18 @@ body {
         display: flex;
         flex-direction: column;
         box-shadow: none;
-        height: 30%;
-        width: 63%;
+        align-items: center;
+        justify-content: center;
+        height: 46%;
+        width: 90%;
     }
-    
+    .separator .line{
+        width: 90%;
+    }
+    .separator .circle{
+        margin-left: -53%;
+    }
+    .date-input{
+        margin-left:9px;
+    }
 }

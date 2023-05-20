@@ -19,20 +19,20 @@
   <div class="container-flex">
     <div class="card">
       <div class="date-container">
-      <div class="date-input" >
-        <p>DAY</p>
+      <div class="date-input" id="date-input-day" >
+        <p id="dayP">DAY</p>
         <input id="day" type="text" placeholder="DD" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="2">
         <p class="error" id="day-error">Must be a valid day</p>
       </div>
       <div class="date-input">
-        <p>MONTH</p>
+        <p id="monthP">MONTH</p>
         <input id="month" type="text" placeholder="MM" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="2">
-        <p class="error">Must be a valid month</p>
+        <p id="month-error" class="error">Must be a valid month</p>
       </div>
       <div class="date-input">
-        <p>YEAR</p>
+        <p id="yearP">YEAR</p>
         <input id="year" type="text" placeholder="YYYY" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4">
-        <p class="error">Must be in the past</p>
+        <p id="year-error" class="error">Must be in the past</p>
       </div>
     </div>
     <div class="separator">
@@ -45,11 +45,11 @@
       <p>years</p>
     </div>
     <div class="date-calculator">
-      <p class="param" id="years-param">--</p>
+      <p class="param" id="months-param">--</p>
       <p>months</p>
     </div>
     <div class="date-calculator">
-      <p class="param" id="years-param">--</p>
+      <p class="param" id="days-param">--</p>
       <p>days</p>
     </div>
   </div>
