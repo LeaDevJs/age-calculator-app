@@ -1,1 +1,1 @@
-falta animacion
+Coded by Leandro Zapata for FrontendMentor

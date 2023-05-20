@@ -94,9 +94,12 @@ const handleChange=(dayResult,monthResult,yearResult) => {
     dayParam.innerText=dayResult;
     monthParam.innerText=monthResult;
     yearParam.innerText=yearResult;
-    dayParam.style.letterSpacing="1px"
-    monthParam.style.letterSpacing="1px"
-    yearParam.style.letterSpacing="1px"
+    dayParam.style.letterSpacing="1px";
+    monthParam.style.letterSpacing="1px";
+    yearParam.style.letterSpacing="1px";
+    dayParam.classList.add("animation");
+    monthParam.classList.add("animation");
+    yearParam.classList.add("animation");
 }
 
 function handleClick(){

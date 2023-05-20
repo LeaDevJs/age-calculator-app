@@ -136,6 +136,48 @@ body {
     letter-spacing: 10px;
     transition: 1s;
 }
+.animation{
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes move {
+    0%{
+        transform: rotate(2deg);
+    }
+    10%{
+        transform: rotate(-2deg);
+    }
+    20%{
+        transform: rotate(-2deg);
+    }
+    30%{
+        transform: rotate(2deg);
+    }
+    40%{
+        transform: rotate(2deg);
+    }
+    50%{
+        transform: rotate(2deg);
+    }
+    60%{
+        transform: rotate(-2deg);
+    }
+    70%{
+        transform: rotate(-2deg);
+    }
+    80%{
+        transform: rotate(2deg);
+    }
+    90%{
+        transform: rotate(2deg);
+    }
+    100%{
+        transform: rotate(-2deg);
+    }
+    
+    
+}
 
 @media (max-width: 768px) {
     .container-flex{
@@ -150,7 +192,7 @@ body {
         box-shadow: none;
         align-items: center;
         justify-content: center;
-        height: 49%;
+        height: 65%;
         width: 98%;
     }
     .separator .line{
