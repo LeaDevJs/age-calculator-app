@@ -183,8 +183,8 @@ body {
     .container-flex{
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin: 0;
+        justify-content: start;
+        margin: 10px;
     }
     .card{
         display: flex;
@@ -192,8 +192,8 @@ body {
         box-shadow: none;
         align-items: center;
         justify-content: center;
-        height: 65%;
-        width: 98%;
+        height: 100vh;
+        width: 98vw;
     }
     .separator .line{
         width: 90%;
