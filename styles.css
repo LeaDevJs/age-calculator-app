@@ -150,8 +150,8 @@ body {
         box-shadow: none;
         align-items: center;
         justify-content: center;
-        height: 46%;
-        width: 90%;
+        height: 49%;
+        width: 98%;
     }
     .separator .line{
         width: 90%;
@@ -161,5 +161,19 @@ body {
     }
     .date-input{
         margin-left:9px;
+    }
+    .calculator{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .separator{
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+    }
+    .date-container{
+        margin-top: 15px;
+        margin-bottom: 15px;
+
     }
 }
